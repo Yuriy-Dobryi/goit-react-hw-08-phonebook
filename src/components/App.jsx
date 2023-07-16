@@ -23,10 +23,12 @@ export const App = () => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  if (isError) {
-    toast.error('Incorrect login or password');
-  }
-  
+  useEffect(() => {
+    if (isError) {
+      toast.error('Incorrect login or password');
+    }
+  }, [isError]);
+
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
@@ -55,7 +57,7 @@ export const App = () => {
           <Route
             path="/contacts"
             element={
-              <PrivateRoute redirectTo="/" component={<ContactsPage />} />
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
             }
           />
         </Route>
