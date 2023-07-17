@@ -28,7 +28,7 @@ export const App = () => {
       toast.error('Incorrect login or password');
     }
   }, [isError]);
-
+  
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
@@ -57,7 +57,7 @@ export const App = () => {
           <Route
             path="/contacts"
             element={
-              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+              <PrivateRoute redirectTo="/" component={<ContactsPage />} />
             }
           />
         </Route>
