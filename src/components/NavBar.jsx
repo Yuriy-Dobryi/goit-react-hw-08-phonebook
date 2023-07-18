@@ -52,6 +52,7 @@ const NavLinkSt = styled(NavLink)`
   font-weight: 700;
   background-color: #ecd9dc;
   color: #626060;
+  font-size: 20px;
   border-radius: 15px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);

@@ -10,9 +10,9 @@ margin: 0;
   background-image: url('bg-image.jpg');
 
   background-size: cover;
-  backdrop-filter: blur(8px);
-  -webkit-animation: slidein 100s;
-  animation: slidein 80s;
+  backdrop-filter: blur(20px);
+  -webkit-animation: slidein 30s;
+  animation: slidein 30s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   -webkit-animation-iteration-count: infinite;
@@ -24,24 +24,24 @@ margin: 0;
 @-webkit-keyframes slidein {
   from {
     background-position: top;
-    background-size: 1800px;
+    background-size: 1600px;
   }
-  
+
   to {
-    background-position: -100px -100px;
-    background-size: 2200px;
+    background-position: -80px -240px;
+    background-size: 2000px;
   }
 }
 
 @keyframes slidein {
   from {
     background-position: top;
-    background-size: 1800px;
+    background-size: 1600px;
   }
 
   to {
-    background-position: -100px -100px;
-    background-size: 2200px;
+    background-position: -80px -240px;
+    background-size: 2000px;
   }
 }
 

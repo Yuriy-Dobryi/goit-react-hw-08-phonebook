@@ -18,7 +18,7 @@ const ContactsPage = lazy(() => import('pages/Contacts'));
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing, isError } = useAuth();
-  
+
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
@@ -28,7 +28,7 @@ export const App = () => {
       toast.error('Incorrect login or password');
     }
   }, [isError]);
-  
+
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
@@ -36,20 +36,18 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route
-            path="/register"
+          <Route path="/register"
             element={
               <RestrictedRoute
-                redirectTo="/contacts"
+                defaultRedirectTo="/contacts"
                 component={<RegisterPage />}
               />
             }
           />
-          <Route
-            path="/login"
+          <Route path="/login"
             element={
               <RestrictedRoute
-                redirectTo="/contacts"
+                defaultRedirectTo="/contacts"
                 component={<LoginPage />}
               />
             }
@@ -57,12 +55,14 @@ export const App = () => {
           <Route
             path="/contacts"
             element={
-              <PrivateRoute redirectTo="/" component={<ContactsPage />} />
+              <PrivateRoute
+                redirectTo="/login"
+                component={<ContactsPage />} />
             }
           />
         </Route>
       </Routes>
-        
+
       <ToastContainer autoClose={2000} />
     </>
   );

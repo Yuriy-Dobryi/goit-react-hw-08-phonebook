@@ -27,8 +27,8 @@ export const Layout = () => {
 };
 
 const Header = styled.header`
-  padding: 20px 0;
-  border-bottom: 5px solid #2a363b;
+  padding: 10px 0;
+  border-bottom: 3px solid #2a363b;
 `;
 
 const Main = styled.main`

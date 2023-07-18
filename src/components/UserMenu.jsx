@@ -21,6 +21,7 @@ export const UserMenu = () => {
 
 const UserName = styled.p`
   color: #353535;
+  font-size: 18px;
   font-weight: 700;
   font-style: italic;
 `;
